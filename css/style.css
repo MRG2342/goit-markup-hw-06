@@ -21,6 +21,10 @@ header .container-h .nav-menu{
     align-items: center;
 }
 
+header .container-h .nav-menu .menu-icon .icon-menu{
+    display: none;
+}
+
 header .container-h .nav-menu .logo{
     margin-right: 76px;
     margin-left: 156px;
@@ -199,12 +203,13 @@ main .section-two .container-s2 .features-ul{
     position: absolute;
     display: flex;
     list-style-type: none;
-    top: 792px;
+    top: 720px;
     left: 156px;
     width: 1128px;
     height: 104px;
     gap: 24px;
     margin-left: 0px;
+    margin-top: 0px;
 }
 
 main .section-two .container-s2 .features-ul .features-li{
@@ -668,6 +673,427 @@ footer .container-f .mail-input .mail-form .subscribe-button .icon-send{
     margin-left: 16px;
 }
 
+.modal-window{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color:rgba(46, 47, 66, 0.4) ;
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+}
+
+.modal-window .modal-container{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 408px;
+    min-height: 584px;
+    background: #fcfcfc;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    transition: transform  250ms cubic-bezier(0.4, 0, 0.2, 1) ;
+    padding: 72px 24px 24px 24px;
+
+}
+
+.modal-window .modal-container .modal-container-button{
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #e7e9fc;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 0;
+    cursor: pointer;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-window .modal-container .modal-container-button:hover{
+    background-color: #404bbf;
+    border: none;
+}
+
+.modal-window .modal-container .modal-container-button:focus{
+    background-color: #404bbf;
+    border: none;
+}
+
+.modal-window .modal-container .modal-container-button .icon-close{
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1) ;
+
+}
+
+.modal-window .modal-container .modal-container-button:hover .icon-close{
+    fill: #ffffff;
+    position: absolute;
+    display: flex;
+    
+}
+
+.modal-window .modal-container .modal-container-button:focus .icon-close{
+    fill: #ffffff;
+    position: absolute;
+    display: flex;
+    
+}
+
+.modal-window .modal-container .modal-container-p{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    text-align: center;
+    letter-spacing: 0.02em;
+    color: #2E2F42;
+    margin-bottom: 16px;
+}
+
+.modal-window .modal-container .modal-container-form .form-div{
+    margin-bottom: 8px;
+}
+
+.modal-window .modal-container .modal-container-form .form-div .form-label{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.04em;
+    color: #8e8f99;
+    display: block;
+    margin-bottom: 4px;
+}
+
+.modal-window .modal-container .modal-container-form .form-div .form-icon{
+    position: relative;
+}
+
+.modal-window .modal-container .modal-container-form .form-div .form-icon .form-icon-input{
+    width: 100%;
+    height: 40px;
+    border:1px solid rgba(46, 47, 66, 0.4);
+    border-radius: 4px;
+    background-color: transparent;
+    padding-left: 38px;
+    outline: transparent;
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-window .modal-container .modal-container-form .form-div .form-icon .form-icon-input:focus{
+    border-color: #4d5ae5;
+}
+
+.modal-window .modal-container .modal-container-form .form-div .form-icon .icon-svg{
+    position: absolute;
+    display: flex;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    gap: 4px;
+}
+
+.modal-window .modal-container .modal-container-form .form-div .form-icon .form-icon-input:focus + svg.icon-svg{
+    fill: #4D5AE5;
+}
+
+.modal-window .modal-container .modal-container-form .comment-div{
+    margin-bottom: 16px;
+}
+
+.modal-window .modal-container .modal-container-form .comment-div .form-label{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.04em;
+    color: #8e8f99;
+    display: block;
+    margin-bottom: 4px;
+}
+
+.modal-window .modal-container .modal-container-form .comment-div .text-form{
+    width: 100%;
+    height: 120px;
+    font-family: 'Roboto', sans-serif; 
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.04em;
+    color: rgba(46, 47, 66, 0.4) ; 
+    border: 1px solid rgba(46, 47, 66, 0.4);
+    border-radius: 4px;
+    background-color: transparent;
+    padding: 8px 16px;
+    outline: transparent;
+    resize: none;
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-window .modal-container .modal-container-form .comment-div .text-form:focus{
+    border-color: #4D5AE5;
+}
+
+.modal-window .modal-container .modal-container-form .check-div{
+    margin-bottom: 24px;
+}
+
+.modal-window .modal-container .modal-container-form .check-div .check-label{
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.04em;
+    color: #8e8f99;
+    margin-left: 24px;
+}
+
+.modal-window .modal-container .modal-container-form .check-div .visually-hidden{
+    display: none;
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+.modal-window .modal-container .modal-container-form .check-div .check-label .privacy-policy-box{
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    border: 1px solid rgba(46, 47, 66, 0.4);
+    border-radius: 2px;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1), fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    fill: transparent;
+    top: 485px;
+    left: 24px;
+}
+
+.modal-window .modal-container .modal-container-form .check-div .visually-hidden:checked + label.check-label span.privacy-policy-box{
+    background-color: #404bbf;
+    border: none;
+    fill: #F4F4FD;
+    margin-right: 24px;
+}
+
+.modal-window .modal-container .modal-container-form .check-div .check-label .privacy-policy-connect{
+    color: #4d5ae5;
+}
+
+.modal-window .modal-container .modal-container-form .form-button{
+    display: block;
+    position: relative;
+    min-width: 169px;
+    height: 56px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.04em;
+    color: #ffffff;
+    cursor: pointer;
+    background-color: #4D5AE5;
+    border: none;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    left: 85px;
+    border-radius: 4px;
+    
+}
+
+.modal-window .modal-container-menu{
+    display: none;
+}
+
+.modal-window .modal-container-menu .modal-container-button-menu{
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #e7e9fc;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 0;
+    cursor: pointer;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-window .modal-container-menu .modal-container-button-menu:hover{
+    background-color: #404bbf;
+    border: none;
+}
+
+.modal-window .modal-container-menu .modal-container-button-menu:focus{
+    background-color: #404bbf;
+    border: none;
+}
+
+.modal-window .modal-container-menu .modal-container-button-menu .icon-close{
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1) ;
+
+}
+
+.modal-window .modal-container-menu .modal-container-button-menu:hover .icon-close{
+    fill: #ffffff;
+    position: absolute;
+    display: flex;
+    
+}
+
+.modal-window .modal-container-menu .modal-container-button-menu:focus .icon-close{
+    fill: #ffffff;
+    position: absolute;
+    display: flex;
+    
+}
+
+.modal-window .modal-container-menu .menu-list-mobile{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width:151px ;
+    height: 200px;
+    top: 0px;
+    left: 0px;
+    gap: 40px;
+    padding: 0%;
+    margin: 0%;
+}
+
+.modal-window .modal-container-menu .menu-list-mobile li{
+    list-style: none;
+}
+
+.modal-window .modal-container-menu .menu-list-mobile li .menu-mobile{
+    text-decoration: none;
+}
+
+.modal-window .modal-container-menu .menu-list-mobile li .menu-mobile h2{
+    margin: 0%;
+    padding: 0%;
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 1.2;
+    letter-spacing: 0.02em;
+    color: #2E2F42;
+}
+
+.modal-window .modal-container-menu .menu-list-mobile li .menu-mobile h2:hover{
+    color: #404BBF;
+}
+
+
+.modal-window .modal-container-menu .address-menu{
+    position: absolute;
+    display: flex;
+    width: 193px;
+    height: 72px;
+    top:430px;
+    left: 16px;
+    padding: 0%;
+    margin: 0%;
+    font-style: normal;
+}
+
+.modal-window .modal-container-menu .address-menu .informations{
+    position: absolute;
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 24px;
+    padding: 0%;
+    margin: 0%;
+    
+}
+
+.modal-window .modal-container-menu .address-menu .informations li{
+    list-style: none;
+}
+
+.modal-window .modal-container-menu .address-menu .informations li a{
+    text-decoration: none;
+}
+
+.modal-window .modal-container-menu .address-menu .informations li a:hover{
+    text-decoration: none;
+    color:#4D5AE5 ;
+}
+
+.modal-window .modal-container-menu .address-menu .informations li a:focus{
+    text-decoration: none;
+    color:#4D5AE5 ;
+}
+
+.modal-window .modal-container-menu .address-menu .informations li a h3{
+     font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    color: #2E2F42;
+    padding: 0%;
+    margin: 0%;
+}
+
+.modal-window .modal-container-menu .social-media-menu-ul{
+    position: absolute;
+    display: flex;
+    width: 280px;
+    height: 40px;
+    gap: 40px;
+    top: 560px;
+    left: 16px;
+    margin: 0%;
+    padding: 0%;
+}
+
+.modal-window .modal-container-menu .social-media-menu-ul .social-media-menu-li{
+    width: 40px;
+    height: 40px;
+    list-style-type: none;
+}
+
+.modal-window .modal-container-menu .social-media-menu-ul .social-media-menu-li .social-media-menu-a{
+    width: 100%;
+    height: 100%;
+    background-color: #4D5AE5;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-window .modal-container-menu .social-media-menu-ul .social-media-menu-li .social-media-menu-a:hover{
+    background-color: #31d0aa;
+}
+
+.modal-window .modal-container-menu .social-media-menu-ul .social-media-menu-li .social-media-menu-a:focus{
+    background-color: #31d0aa;
+}
+
+.modal-window .modal-container-menu .social-media-menu-ul .social-media-menu-li .social-media-menu-a .social-media-menu-svg{
+    fill: #f4f4fd;
+}
+
+
+
+
 /* tablet */
 
 @media (max-width:768px) {
@@ -816,9 +1242,6 @@ footer .container-f .mail-input .mail-form .subscribe-button .icon-send{
     left:316px ;
     width: 163px;
     height: 40px;
-
-
-
     }
 
     main .section-three .container-s3 .teamcard-ul{
@@ -919,17 +1342,555 @@ footer .container-f .mail-input .mail-form .subscribe-button .icon-send{
     left: 108px;
     }
 
-
 }
+
+
+
+
 /* mobile */
 
 @media (max-width:320px) {
-    
-    body{
-        background-color: red;
+   
+    header{
+        width: 320px;
+    }
+
+   header .container-h{
+        width: 350px;
+        height: 56px;
+        margin: 0%;
+    }
+
+    header .container-h .nav-menu .menu-list{
+        display: none;
+    }
+
+    header .container-h address{
+        display: none;
+    }
+
+    header .container-h .nav-menu .menu-icon .icon-menu{
+        display: flex;
+        position: absolute;
+        top: 16px;
+        left: 280px;
+    }
+
+    main .section-one {
+        position: absolute;
+        background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../images/people-office-mobile.jpg);
+        max-width: 320px;
+        width: 320px;
+        height: 432px;
+        top: 56px;
+    }
+
+    main .section-one .container-s1 .motto{
+        max-width: 216px;
+        height: 160px;
+        top: 72px;
+        left:52px;
+        font-size: 36px;
+        letter-spacing: 0.02em;
+    }
+
+    main .section-one .container-s1 .service-button{
+        position: absolute;
+        height: 56px;
+        top: 304px;
+        left: 75px;
     }
     
+    main .section-two .container-s2 .features-ul .features-li .features-svg{
+        display: none;
+    }
 
+    main .section-two{
+        position: absolute;
+        padding: 0%;
+        margin: 0%;
+        top: 584px;
+        width: 320px;
+        height: 696px;
+        margin: 0px 0px 96px 0px;
+       
+    }
+
+    main .section-two .container-s2{
+        position: relative;
+        width: 288px;
+        height: 696px;
+        top: 0px;
+        left: 0px;
+        margin: 0px 16px 0px 16px;
+        padding:0%;
+    }
+
+    main .section-two .container-s2 .features-ul{
+        top: 0px;
+        left: 0px;
+        width: 288px;
+        height: 696px;
+        row-gap: 72px;
+    }
+
+    main .section-two .container-s2 .features-ul .features-li{
+        width:288px ;
+    }
+
+    main .section-two .container-s2 .features-ul .features-li .features-svg{
+        display: none;
+    }
+    
+    main .section-two .container-s2 .features-ul .features-li h2{
+        width: 288px;
+        height: 40px;
+        font-family: "Roboto", sans-serif;
+        font-weight: 700;
+        font-size: 36px;
+        line-height: 1.2;
+        letter-spacing: 0.02em;
+        display: flex;
+        justify-content: center;
+        color: #2E2F42;
+    }
+
+    main .section-two .container-s2 .features-ul .features-li .feature-h{
+        display: none;
+    }
+
+    main .section-two .container-s2 .features-ul .features-li p{
+        width: 288px;
+        height: 72px;
+        font-family: "Roboto", sans-serif;
+        font-weight: 500;
+    }
+    
+    main .section-three{
+        padding:96px 0;
+        width: 320px;
+        height: 2232px;
+        top: 1376px;
+    }
+    
+    main .section-three .container-s3 .teamcard-h{
+        margin-top: 0px;
+        top: 0px;
+        left: 79px ;
+        width: 165px;
+        height: 40px;
+    }
+
+    main .section-three .container-s3 .teamcard-ul{
+        position: relative;
+        display: flex;
+        top: 0px;
+        left: 28px;
+        margin: 0%;
+        padding: 0%;
+        gap: 72px;
+    }
+
+    main .section-four{
+        position: absolute;
+        display: flex;
+        padding:0;
+        width: 288px;
+        height: 2752px;
+        top: 3704px;
+        left: 16px;
+    }
+
+    main .section-four .container-s4{
+        position: relative;
+        display: flex;
+        width: 288px;
+        height: 2752px;
+        top: 0px;
+        left: 0px;
+        padding: 0%;
+
+    }
+    
+    main .section-four .container-s4 .portfolio-top-h{
+        position: relative;
+        width: 220px;
+        height: 40px;
+        top: 0px;
+        left: 35px;
+        margin-bottom: 72px;
+        color: #2e2f42;
+        padding: 0%;
+        margin: 0%;
+    }
+
+    main .section-four .container-s4 .portfolio-ul{
+        position: absolute;
+        display: flex;
+        flex-wrap: wrap;
+        width: 288px;
+        gap: 48px;
+        left: 0px;
+        top: 112px;
+        padding: 0%;
+        overflow: hidden;
+        margin: 0%;
+    }
+
+    main .section-four .container-s4 .portfolio-ul .portfolio-li{
+        list-style-type: none;
+        transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+        width: 288px;
+        height: 400px;
+    }
+
+    main .section-four .container-s4 .portfolio-ul .portfolio-li .opening-p img{
+        height: 280px;
+    }
+
+    main .section-four .container-s4 .portfolio-ul .portfolio-li .details{
+        padding: 32px 16px;
+        border: 1px solid #e7e9fc ;
+        border-top: none;
+        margin-bottom:8px;
+        width: 288px;
+        height:120px ;
+    }
+
+    main .section-four .container-s4 .portfolio-ul .portfolio-li .details .portfolio-h{
+        margin: 0%;
+    }
+
+    footer{
+        padding: 100px 0;
+        width: 320px;
+        height: 664px;
+        top: 6552px;
+    }
+
+    footer .container-f{
+        width:320px;
+        height: 544px;
+        padding: 0%;
+    }
+
+    footer .container-f .container2-f{
+        position: absolute;
+        margin:0px;
+        width: 288px;
+        height: 112px;
+        left: 16px;
+    }
+
+    footer .container-f .container2-f .logo{
+        display: flex;
+        width: 115px;
+        height: 24px;
+        left: 86px;
+    }
+
+    footer .container-f .container2-f .footer-p{
+        max-width: 288px;
+        width: 288px;
+        height: 72px;
+        top: 0px;
+        left: 0px;
+    }
+
+    footer .container-f .f-social-media{
+        top: 280px;
+        left: 56px;
+        color: #FFFFFF;
+    }
+
+    footer .container-f .f-social-media .f-social-media-p{
+       left: 56px;
+    }
+
+    footer .container-f .mail-input{
+        display: flex;
+        position: absolute;
+        width: 288px;
+        height: 136px;
+        top: 432px;
+        left: 16px;
+    }
+
+    footer .container-f .mail-input .mail-input-p{
+        position: relative;
+        width: 75px;
+        height: 24px;
+        left: 106px;
+    }
+
+    footer .container-f .mail-input .mail-form{
+        display: flex;
+        position: absolute;
+        width: 288px; 
+        height: 136px;
+    }
+    
+    footer .container-f .mail-input .mail-form .mail-label .mail-input{
+        width: 288px;
+        margin-bottom: 16px;
+    }
+
+    footer .container-f .mail-input .mail-form .subscribe-button{
+        display: flex;
+        position: relative;
+        min-width: 165px;
+        height: 40px;
+        top: 104px;
+        left: 38px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .modal-window{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color:rgba(46, 47, 66, 0.4) ;
+        transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .modal-window .modal-container{
+        position: relative;
+        top:995px;
+        left: 153px;
+        width: 288px;
+    }
+
+    .modal-window .modal-container .modal-container-form .check-div{
+       width: 256px;
+       height: 31px;
+    }
+
+    .modal-window .modal-container .modal-container-form .check-div .check-label .privacy-policy-box{
+        top: 518px;
+    } 
+    
+    .modal-window .modal-container .modal-container-form .check-div .check-label .privacy-policy-connect{
+        display: flex;
+        position: relative;
+        left: 24px;
+    }
+
+    .modal-window .modal-container .modal-container-form .check-div .check-label{
+        font-family: 'Roboto', sans-serif;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 1.17;
+        letter-spacing: 0.006em;
+        color: #8e8f99;
+        margin-left: 24px;
+    }
+
+    .modal-window .modal-container .modal-container-form .form-button{
+        display: block;
+        position: relative;
+        min-width: 169px;
+        height: 56px;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 1.5;
+        letter-spacing: 0.04em;
+        color: #ffffff;
+        cursor: pointer;
+        background-color: #4D5AE5;
+        border: none;
+        transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+        left: 36px;
+        border-radius: 4px;  
+    }
+
+    .modal-window .modal-container-menu{
+        position: absolute;
+        display: flex;
+        top:323px;
+        left: 161px;
+        transform: translate(-50%,-50%);
+        width: 320px;
+        height: 640px;
+        background: #fcfcfc;
+        box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 2px 1px rgba(0, 0, 0, 0.2);
+        border-radius: 4px;
+        transition: transform  250ms cubic-bezier(0.4, 0, 0.2, 1) ;
+        padding: 72px 24px 40px 16px;
+    }
+
+    .modal-window .modal-container-menu .modal-container-button-menu{
+        position: absolute;
+        top: 24px;
+        right: 24px;
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #e7e9fc;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        padding: 0;
+        cursor: pointer;
+        transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .modal-window .modal-container-menu .modal-container-button-menu:hover{
+        background-color: #404bbf;
+        border: none;
+    }
+
+    .modal-window .modal-container-menu .modal-container-button-menu:focus{
+        background-color: #404bbf;
+        border: none;
+    }
+
+    .modal-window .modal-container-menu .modal-container-button-menu .icon-close{
+        transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1) ;
+    }
+
+    .modal-window .modal-container-menu .modal-container-button-menu:hover .icon-close{
+        fill: #ffffff;
+        position: absolute;
+        display: flex;
+        
+    }
+
+    .modal-window .modal-container-menu .modal-container-button-menu:focus .icon-close{
+        fill: #ffffff;
+        position: absolute;
+        display: flex;
+    }
+
+    .modal-window .modal-container-menu .menu-list-mobile{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        width:151px ;
+        height: 200px;
+        top: 0px;
+        left: 0px;
+        gap: 40px;
+        padding: 0%;
+        margin: 0%;
+    }
+
+    .modal-window .modal-container-menu .menu-list-mobile li{
+        list-style: none;
+    }
+
+    .modal-window .modal-container-menu .menu-list-mobile li .menu-mobile{
+        text-decoration: none;
+    }
+
+    .modal-window .modal-container-menu .menu-list-mobile li .menu-mobile h2{
+        margin: 0%;
+        padding: 0%;
+        font-family: "Roboto", sans-serif;
+        font-weight: 700;
+        font-size: 36px;
+        line-height: 1.2;
+        letter-spacing: 0.02em;
+        color: #2E2F42;
+    }
+
+    .modal-window .modal-container-menu .menu-list-mobile li .menu-mobile h2:hover{
+        color: #404BBF;
+    }
+
+    .modal-window .modal-container-menu .address-menu{
+        position: absolute;
+        display: flex;
+        width: 193px;
+        height: 72px;
+        top:430px;
+        left: 16px;
+        padding: 0%;
+        margin: 0%;
+        font-style: normal;
+    }
+
+    .modal-window .modal-container-menu .address-menu .informations{
+        position: absolute;
+        display: flex;
+        flex-direction: column-reverse;
+        gap: 24px;
+        padding: 0%;
+        margin: 0%;
+    }
+
+    .modal-window .modal-container-menu .address-menu .informations li{
+        list-style: none;
+    }
+
+    .modal-window .modal-container-menu .address-menu .informations li a{
+        text-decoration: none;
+    }
+
+    .modal-window .modal-container-menu .address-menu .informations li a:hover{
+        text-decoration: none;
+        color:#4D5AE5 ;
+    }
+
+    .modal-window .modal-container-menu .address-menu .informations li a:focus{
+        text-decoration: none;
+        color:#4D5AE5 ;
+    }
+
+    .modal-window .modal-container-menu .address-menu .informations li a h3{
+        font-family: "Roboto", sans-serif;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 1.5;
+        letter-spacing: 0.02em;
+        color: #2E2F42;
+        padding: 0%;
+        margin: 0%;
+    }
+
+    .modal-window .modal-container-menu .social-media-menu-ul{
+        position: absolute;
+        display: flex;
+        width: 280px;
+        height: 40px;
+        gap: 40px;
+        top: 560px;
+        left: 16px;
+        margin: 0%;
+        padding: 0%;
+    }
+
+    .modal-window .modal-container-menu .social-media-menu-ul .social-media-menu-li{
+        width: 40px;
+        height: 40px;
+        list-style-type: none;
+    }
+
+    .modal-window .modal-container-menu .social-media-menu-ul .social-media-menu-li .social-media-menu-a{
+        width: 100%;
+        height: 100%;
+        background-color: #4D5AE5;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .modal-window .modal-container-menu .social-media-menu-ul .social-media-menu-li .social-media-menu-a:hover{
+        background-color: #31d0aa;
+    }
+
+    .modal-window .modal-container-menu .social-media-menu-ul .social-media-menu-li .social-media-menu-a:focus{
+        background-color: #31d0aa;
+    }
+
+    .modal-window .modal-container-menu .social-media-menu-ul .social-media-menu-li .social-media-menu-a .social-media-menu-svg{
+        fill: #f4f4fd;
+    }
+   
 }
-
-
